@@ -1,0 +1,153 @@
+-> Mathematical characters:
+
+System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture; // The '.' is recognised as a mathematical character from the console
+
+using System.Threading;
+using System.Globalization;
+{
+	Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+}
+___________________________________________________________________________
+
+Unit testing
+New Project -> add reference (solutions)
+
+
+
+______________________________________________________________________
+
+-> for cycle for triangle
+
+Console.OutputEncoding = Encoding.UTF8;
+            char CopyRight = '\u00A9';
+            char Space = '\u0020';
+
+            for (int i = 1; i < 10; i++)
+            {
+                string spaces = "";
+                string stars = "";
+                for (int j = 0; j < (10-i)/2 ; j++)
+                {
+                    spaces += Space;
+                }
+                for (int j = 0; j < i; j++)
+                {
+                    stars += CopyRight;
+                }
+                Console.WriteLine(spaces + stars);
+___________________________________________________________________________
+
+-> Declare arrays and lists
+
+int[] myArray = new int[6];
+int[] myArray = { 1, 2, 3, 4, 5, 6 };
+
+int[] arr = new int[5];
+
+for (int i = 0; i < arr.Length; i++)
+{
+      arr[i] = i;
+}
+
+List<int?> Numbers = new List<int?>();
+
+array.GetLENGTH(0) count rows
+array.GetLENGTH(1) coun columns
+___________________________________________________________________________
+
+-> Fibonacci Sequence
+
+uint[] FibonacciSequence = new uint[N];
+
+FibonacciSequence[0] = 0; // It is the first member of the sequence
+FibonacciSequence[1] = 1; // It is the second member of the sequence
+for (uint i = 2; i < N; i++)
+	{
+		FibonacciSequence[i] = FibonacciSequence[i - 1] + FibonacciSequence[i - 2];
+	}
+___________________________________________________________________________
+
+-> greatest common divisor (GCD) = Euclidean algorithm
+
+Console.Write("Please, enter value for \"A\": ");
+            int A = int.Parse(Console.ReadLine());
+
+            Console.Write("Please, enter value for \"B\": ");
+            int B = int.Parse(Console.ReadLine());
+
+            // It is needed to know which number is bigger and smaller for the algorithm - http://www.youtube.com/watch?v=fwuj4yzoX1o
+            int Bigger = Math.Max(A, B);
+            int Smaller = Math.Min(A, B);
+
+            int Devider = Bigger;
+            int Remainder = Smaller;
+
+            do
+            {
+                int result = Devider / Remainder;
+                int SavedDevider = Devider;
+                Devider = Remainder;
+                if (result == 0)
+                {
+                    continue;
+                }
+                else
+	            {
+                    Remainder = SavedDevider - (Remainder * result);
+                
+	            }
+            } while ((Devider % Remainder) != 0);
+            
+                
+            
+
+            Console.WriteLine("\nGCD of {0} and {1} is {2}.\n", A, B, Remainder);
+___________________________________________________________________________
+
+if (args.Length != 0)
+            {
+                // test input
+                // bgcoder will skip this part
+
+                Console.SetIn(new StringReader(
+                @"9
+                0
+                -1
+                1
+                2
+                3
+                2
+                1
+                -1"));
+            }
+___________________________________________________________________________
+
+Multiply a string:
+
+String.Concat(Enumerable.Repeat(string, 11))
+
+Fill with characters:
+
+.PadLeft(11, '.')
+___________________________________________________________________________
+
+point1: Console.Write("Gender (m/f): ");
+        char gender = char.Parse(Console.ReadLine());
+        if ((gender != 'm') && (gender != 'f'))
+        {
+            Console.WriteLine("There is no such gender.\a");
+            goto point1;
+        }
+        Console.Write("Please enter the ID number: ");
+        int idNumber = int.Parse(Console.ReadLine());
+___________________________________________________________________________
+
+string Format = "dddd"; // it is specified what needs to be displayed
+Day.ToString(Format)
+MMM     display three-letter month
+ddd     display three-letter day of the WEEK
+d       display day of the MONTH
+HH      display two-digit hours on 24-hour scale
+mm      display two-digit minutes
+yyyy    display four-digit year
+___________________________________________________________________________
